@@ -42,7 +42,7 @@ public class ViewModelMainActivity extends AndroidViewModel {
 
     public void encontrarLibro(String nombre ) {
         for (Libro libro : listaLibros) {
-            if (libro.getNombre().equalsIgnoreCase(nombre)) {
+            if (libro.getNombre().contains(nombre)) {
                 Intent intent = new Intent(getApplication(), DetallesActivity.class);
                 intent.putExtra("libroEncontrado", libro);
                 intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
